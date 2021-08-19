@@ -1,0 +1,11 @@
+proxy:
+  image: nginx:1.19-alpine
+  ports:
+    - ${NGINX_PROXY_PORT}:${NGINX_PROXY_PORT}
+  volumes:
+    - ./nginx/dev:/etc/nginx/templates
+  working_dir: /etc/nginx
+  networks:
+    - default
+  env_file:
+    - .env
