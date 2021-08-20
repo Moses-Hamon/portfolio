@@ -4,6 +4,7 @@
   "description": "Api for portfolio",
   "main": "server.ts",
   "scripts": {
+    "start": "docker-compose up -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Moses Hamon",

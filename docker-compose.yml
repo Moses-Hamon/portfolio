@@ -1,11 +1,53 @@
-proxy:
-  image: nginx:1.19-alpine
-  ports:
-    - ${NGINX_PROXY_PORT}:${NGINX_PROXY_PORT}
-  volumes:
-    - ./nginx/dev:/etc/nginx/templates
-  working_dir: /etc/nginx
-  networks:
-    - default
-  env_file:
-    - .env
+services:
+  # frontend
+  app:
+    image: node:14-alpine
+    ports:
+      - 3010:3010 # inspect port to be exposed for in vscode debugging
+    volumes:
+      - ./:/app
+    working_dir: /app/packages/app
+    expose:
+      - ${APP_PORT}
+    networks:
+      - default
+    env_file:
+      - .env
+    environment:
+      - WDS_SOCKET_PATH=/packages/app/sockjs-node
+    tty: true
+    command: yarn start
+
+  proxy:
+    image: nginx:1.19-alpine
+    ports:
+      - ${NGINX_PROXY_PORT}:${NGINX_PROXY_PORT}
+    volumes:
+      - ./proxy/local:/etc/nginx/templates
+    working_dir: /etc/nginx
+    networks:
+      - default
+    env_file:
+      - .env
+  # DB
+  # postgres:
+  #   image: postgres:13-alpine
+  #   networks:
+  #     - default
+  #   volumes:
+  #     - ~/data/portfolio:/data
+  #     - portfolio-volume-postgres:/var/lib/postgresql/data
+  #   ports:
+  #     - 5432:5432
+  #   env_file:
+  #     - .env
+  #   command: ["postgres", "-c", "log_statement=all"]
+
+networks:
+  default:
+    external:
+      name: portfolio-network
+
+volumes:
+  portfolio-volume-postgres:
+    external: true

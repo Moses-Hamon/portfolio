@@ -1,13 +1,17 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "docker-compose up -d proxy app"
+  },
   "dependencies": {
     "dotenv-cli": "^4.0.0"
   },
   "devDependencies": {
     "lerna": "^4.0.0",
     "@types/node": "^16.0.0"
-
   }
 }
