@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "Api for portfolio",
   "main": "server.ts",
+  "dependencies": {
+    "dotenv": "10.0.0",
+    "@types/express": "^4.17.11",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4"
+  },
   "scripts": {
-    "start": "docker-compose up -d",
+    "start": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Moses Hamon",

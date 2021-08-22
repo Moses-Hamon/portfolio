@@ -29,6 +29,22 @@ services:
       - default
     env_file:
       - .env
+
+  api:
+    image: node:16.7.0-alpine3.14
+    ports:
+      - 4010:4010 # inspect port to be exposed for in vscode debugging
+    working_dir: /app/packages/api
+    volumes:
+      - ./:/app
+    expose:
+      - ${API_PORT}
+    networks:
+      - default
+    env_file:
+      - .env
+    command: yarn start
+
   # DB
   # postgres:
   #   image: postgres:13-alpine
