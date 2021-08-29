@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "docker-compose up -d"
+    "start": "docker-compose up -d",
+    "build:css": "yarn workspace portfolio-app build:css"
   },
   "dependencies": {
     "dotenv-cli": "^4.0.0"
