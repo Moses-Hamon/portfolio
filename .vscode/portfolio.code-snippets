@@ -1,0 +1,15 @@
+{
+  "React FC Component": {
+    "prefix": "re:fc",
+    "body": [
+      "import { FC } from 'react';",
+      "",
+      "const $1: FC<{ className?: string }> = ({ className, children }) => {",
+      "return <div className={className}>{children}</div>;",
+      "};",
+      "",
+      "export default $1;"
+    ],
+    "description": "Add a React Component"
+  }
+}
