@@ -1,5 +1,7 @@
 import { FC } from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import DefaultLayout from "./layouts/DefaultLayout";
+import Home from "./pages/Home";
 
 const App: FC = () => {
   return (
@@ -7,7 +9,9 @@ const App: FC = () => {
       <div className="App">
         <Switch>
           <Route path="/*">
-            <div>Hello World</div>
+            <DefaultLayout>
+              <Home />
+            </DefaultLayout>
           </Route>
         </Switch>
       </div>
