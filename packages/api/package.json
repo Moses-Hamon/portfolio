@@ -11,7 +11,7 @@
     "ts-node-dev": "^1.1.8"
   },
   "scripts": {
-    "start": "ts-node-dev --inspect=0.0.0.0:4040 -r tsconfig-paths/register src/server.ts",
+    "start": "ts-node-dev --inspect=0.0.0.0:4010 -r tsconfig-paths/register src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Moses Hamon",
