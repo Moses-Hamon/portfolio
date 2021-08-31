@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { classNames } from "../utils";
+import { classNames } from "../../utils";
 
 const Home: FC<{ className?: string }> = ({ className = "", children }) => {
-  return <div className={classNames(className, "w-9/12")}>Content</div>;
+  return <div className={classNames(className, "w-9/12")}></div>;
 };
 
 export default Home;

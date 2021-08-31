@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
-import Home from "./pages/Home";
+import { Home } from "./pages/Home";
 
 const App: FC = () => {
   return (
