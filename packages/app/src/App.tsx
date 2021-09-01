@@ -7,13 +7,16 @@ const App: FC = () => {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route path="/*">
-            <DefaultLayout>
+        <DefaultLayout>
+          <Switch>
+            <Route exact path="/projects">
+              <div>Projects</div>
+            </Route>
+            <Route path="/*">
               <Home />
-            </DefaultLayout>
-          </Route>
-        </Switch>
+            </Route>
+          </Switch>
+        </DefaultLayout>
       </div>
     </Router>
   );
