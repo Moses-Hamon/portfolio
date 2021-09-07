@@ -3,9 +3,14 @@
     "prefix": "re:fc",
     "body": [
       "import { FC } from 'react';",
+      "import { classNames }  from '../utils';",
       "",
-      "const $1: FC<{ className?: string }> = ({ className, children }) => {",
-      "return <div className={className}>{children}</div>;",
+      "interface $1Props {",
+      "className?: string",
+      "}",
+      "",
+      "const $1: FC<$1Props> = ({ className = \"\", children }) => {",
+      "return <div className={classNames(className)}>{children}</div>;",
       "};",
       "",
       "export default $1;"
