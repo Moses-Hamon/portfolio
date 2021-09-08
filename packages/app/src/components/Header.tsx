@@ -7,8 +7,8 @@ const Header: FC<{ className?: string; title?: string }> = ({
 }) => {
   return (
     <div className={classNames(className, "w-full")}>
-      <div className="w-full flex h-10 mt-4 mb-6 justify-center text-5xl ">
-        <span>About Me</span>
+      <div className="w-full flex h-10  mb-6 justify-center text-5xl ">
+        <span className="mt-4">About Me</span>
       </div>
       {children}
     </div>
